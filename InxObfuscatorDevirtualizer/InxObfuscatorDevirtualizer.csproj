@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +41,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -48,6 +51,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +61,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -66,6 +71,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="dnlib, Version=3.6.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
@@ -82,26 +88,48 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\ConversionBack\Class.cs" />
     <Compile Include="Runtime\ConversionBack\EmbeddedDllClass.cs" />
     <Compile Include="Runtime\ConversionBack\ExceptionHandlerClass.cs" />
     <Compile Include="Runtime\ConversionBack\FixedExceptionHandlersClass.cs" />
-    <Compile Include="Runtime\ConversionBack\Initialize.cs" />
     <Compile Include="Runtime\ConversionBack\Inx.cs" />
     <Compile Include="Runtime\ConversionBack\Inx2.cs" />
     <Compile Include="Runtime\ConversionBack\VM.cs" />
+    <Compile Include="Runtime\ConversionBack\Xor.cs" />
     <Compile Include="Runtime\Cryptographer.cs" />
-    <Compile Include="Runtime\EBytes.cs" />
-    <Compile Include="Runtime\IConverter.cs" />
-    <Compile Include="Runtime\Xor.cs" />
+    <Compile Include="Runtime\IL_Emulator_Dynamic\ValueStack.cs" />
+    <Compile Include="Runtime\Runtime\EBytes.cs" />
+    <Compile Include="Runtime\Runtime\IConverter.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Add.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\All.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Base.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Br.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Brfalse.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Brtrue.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Call.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Callvirt.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ceq.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Clt.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\ConvI4.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\ConvU1.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldarg.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldc.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\LdelemU1.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldlen.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldloc.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldnull.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Ldstr.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\NewArr.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\NewObj.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Nop.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Pop.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Rem.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\StelemI1.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Stloc.cs" />
+    <Compile Include="Runtime\VMExample.Instructions\Xor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RT32.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RT64.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

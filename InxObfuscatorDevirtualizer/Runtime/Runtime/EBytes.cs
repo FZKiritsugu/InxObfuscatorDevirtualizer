@@ -1,10 +1,10 @@
 using System.Text;
 
-public class Cryptographer
+public class EBytes
 {
 	private byte[] Keys { get; set; }
 
-	public Cryptographer(string password)
+	public EBytes(string password)
 	{
 		Keys = Encoding.ASCII.GetBytes(password);
 	}
