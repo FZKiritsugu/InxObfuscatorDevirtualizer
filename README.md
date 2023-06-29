@@ -1,5 +1,5 @@
 # InxObfuscatorDevirtualizer
-Inx Obfuscator Devirtualizer via Reflection
+Inx Obfuscator Devirtualizer via Reflection. Updated for 5.9
 
 
 # Virtualized
