@@ -33,16 +33,16 @@ namespace InxObfuscatorDevirtualizer
                             {
                                 Console.WriteLine($"Devirtualized: {m.FullName}");
                               
-                            var nigger = m.Body.Instructions[i - 2].Operand.ToString();
-                            var nigger2 = m.Body.Instructions[i - 3].Operand.ToString();
-                            var nigger3 = m.Body.Instructions[i - 5].Operand.ToString();
-                            var nigger4 = m.Body.Instructions[i - 6].Operand.ToString();
-                            var nigger5 = m.Body.Instructions[i - 8].Operand.ToString();
-                            var nigger6 = m.Body.Instructions[i - 9].Operand.ToString();
+                            var _r = m.Body.Instructions[i - 2].Operand.ToString();
+                            var _e = m.Body.Instructions[i - 3].Operand.ToString();
+                            var _t = m.Body.Instructions[i - 5].Operand.ToString();
+                            var _a = m.Body.Instructions[i - 6].Operand.ToString();
+                            var r = m.Body.Instructions[i - 8].Operand.ToString();
+                            var _d = m.Body.Instructions[i - 9].Operand.ToString();
                        
-                            int one = Convert.ToInt32(Xoring(nigger2, nigger));
-                            int two = Convert.ToInt32(Xoring(nigger4, nigger3));
-                            int three = Convert.ToInt32(Xoring(nigger6, nigger5));
+                            int one = Convert.ToInt32(Xoring(_e, r));
+                            int two = Convert.ToInt32(Xoring(_a, _t));
+                            int three = Convert.ToInt32(Xoring(_d, r));
 
                             object[] Params = new object[m.Parameters.Count]; int Index = 0;
                             foreach (var Param in m.Parameters) { Params[Index++] = Param.Type.Next; }
